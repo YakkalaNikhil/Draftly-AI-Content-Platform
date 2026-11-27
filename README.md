@@ -17,7 +17,7 @@ Draftly turns ideas, notes and existing content into useful writing for differen
 ## Requirements
 
 - Node.js 20 or newer recommended
-- A Google Gemini API key with access to the configured model
+- A GROQ API key with access to the configured model
 
 ## Setup
 
@@ -70,7 +70,7 @@ Manual persistence smoke test: generate one draft, open **Recent drafts**, refre
 
 ## API
 
-- `GET /api/health` — reports whether the API key is configured, the selected model, and the request timeout. It does not call Gemini, so it does not confirm model access or spend quota.
+- `GET /api/health` — reports whether the API key is configured, the selected model, and the request timeout. It does not call Groq, so it does not confirm model access or spend quota.
 - `POST /api/generate` — accepts a task and its input fields, then returns `{ text, model, task }`.
 
-Gemini requests have a 45-second per-attempt timeout and one retry for temporary failures. The frontend stops waiting after 95 seconds and displays a diagnostic message. Check the backend terminal for the exact upstream error. The API key belongs only in the backend `.env` file. Do not add it to frontend code or commit `.env` to Git.
+Groq requests have a 45-second per-attempt timeout and one retry for temporary failures. The frontend stops waiting after 95 seconds and displays a diagnostic message. Check the backend terminal for the exact upstream error. The API key belongs only in the backend `.env` file. Do not add it to frontend code or commit `.env` to Git.
