@@ -31,10 +31,10 @@ Draftly turns ideas, notes and existing content into useful writing for differen
 3. Create a `.env` file by copying `.env.example` and add your key:
 
    ```env
-   GEMINI_API_KEY=your_real_key_here
-   GEMINI_MODEL=gemini-3.8-flash
+   GROQ_API_KEY=your_real_key_here
+   GROQ_MODEL=openai/gpt-oss-20b
+   GROQ_TIMEOUT_MS=45000
    PORT=5000
-   ```
 
    If that model is unavailable to your API key, set `GEMINI_MODEL` to a model name enabled for your account.
 
